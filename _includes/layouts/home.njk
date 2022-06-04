@@ -3,11 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="stylesheet" href="https://use.typekit.net/kku8dsx.css">    
+    <style>{% include "assets/styles.css" %}</style>
   </head>
 
   <body>
-      {{ content | safe }}
+    <div class="content">
+    <div class="intro">
+      <h1><strong>Irene Zhou</strong>, software engineer.</h1>
+      <h2>Formerly at Slack.</h2>
+    </div>
+
+    <div class="section">
+      <h3 class="section-header">Work Experience</h2>
+      <div class="work-experience">
+        {% for workExperience in collections.workExperience %}
+          <div class="work-experience--header">
+            <h2 class="work-experience--company">{{workExperience.data.company}}</h2>
+            <div class="work-experience--role">{{workExperience.data.role}}</div>
+            <div class="work-experience--dates">{{workExperience.data.dates}}</div>
+          </div>
+
+          <div class="work-experience--content">
+            {{workExperience.templateContent | safe}}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-header">Projects</h2>
+
+      {% for project in collections.project %}
+      <div class="project--container">
+        <div class="project--info">
+          <div class="project--title">{{project.data.title}}</div>
+          <div class="project--date">{{project.data.date}}</div>
+          <div class="project--content">{{project.templateContent | safe }}</div>
+        </div>
+        <div class="project-image-container">
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+    </div>
   </body>
 </html>
