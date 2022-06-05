@@ -25,7 +25,7 @@
     <div class="section">
       <h3 class="section-header">Work Experience</h2>
       <div class="work-experience">
-        {% for workExperience in collections.workExperience %}
+        {% for workExperience in collections.workExperience | reverse%}
           <div class="work-experience--header">
             <h2 class="work-experience--company">{{workExperience.data.company}}</h2>
             <div class="work-experience--role">{{workExperience.data.role}}</div>
@@ -43,8 +43,8 @@
       <h3 class="section-header">Projects</h2>
 
       <div class="projects">
-        {% for project in collections.project %}
-        <div class="project--container flex-container ">
+        {% for project in collections.project | reverse %}
+        <div class="project--container flex-container">
           <div class="project--info flex-item">
             <div class="project--title"><strong>{{project.data.title}}</strong></div>
             <div class="project--dates small-font">{{project.data.dates}}</div>

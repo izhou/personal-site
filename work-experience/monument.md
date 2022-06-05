@@ -3,6 +3,7 @@ tags: workExperience
 company: Monument
 role: Cofounder/ Proprietor
 dates: Sep 2014 - Present
+date: 2014-09-01
 
 ---
 
