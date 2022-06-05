@@ -12,8 +12,8 @@
 
   <body>
     <div class="content">
-    <div class="intro flex-container">
-      <div class="intro--info flex-item flex-item--large">
+    <div class="flex-container">
+      <div class="flex-item flex-item--large flex-item--bottom">
         <h1><strong>Irene Zhou</strong>, software&nbsp;engineer.</h1>
         <h2>Formerly at Slack.</h2>
       </div>
@@ -24,15 +24,15 @@
 
     <div class="section">
       <h3 class="section-header">Work Experience</h2>
-      <div class="work-experience">
+      <div >
         {% for workExperience in collections.workExperience | reverse%}
-          <div class="work-experience--header">
-            <h2 class="work-experience--company">{{workExperience.data.company}}</h2>
-            <div class="work-experience--role">{{workExperience.data.role}}</div>
-            <div class="work-experience--dates">{{workExperience.data.dates}}</div>
+          <div>
+            <h2>{{workExperience.data.company}}</h2>
+            <div class="subheader">{{workExperience.data.role}}</div>
+            <div class="subheader subheader--right">{{workExperience.data.dates}}</div>
           </div>
 
-          <div class="work-experience--content">
+          <div>
             {{workExperience.templateContent | safe}}
           </div>
         {% endfor %}
@@ -42,16 +42,16 @@
     <div class="section">
       <h3 class="section-header">Projects</h2>
 
-      <div class="projects">
+      <div>
         {% for project in collections.project | reverse %}
-        <div class="project--container flex-container">
-          <div class="project--info flex-item">
-            <div class="project--title"><strong>{{project.data.title}}</strong></div>
-            <div class="project--dates small-font">{{project.data.dates}}</div>
-            <div class="project--content small-font">{{project.templateContent | safe }}</div>
+        <div class="flex-container">
+          <div class="flex-item">
+            <div><strong>{{project.data.title}}</strong></div>
+            <div class="small-font">{{project.data.dates}}</div>
+            <div class="small-font">{{project.templateContent | safe }}</div>
           </div>
-          <div class="project--image-container flex-item">
-            <img class="project--image" src ='./img/{{project.data.imageUrl}}'>
+          <div class="flex-item">
+            <img src ='./img/{{project.data.imageUrl}}'>
           </div>
         </div>
       {% endfor %}
