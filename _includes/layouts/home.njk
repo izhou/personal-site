@@ -18,7 +18,7 @@
         <h2>Formerly at Slack.</h2>
       </div>
       <div class="image-container flex-item">
-              <img class="intro-image" src ='./img/irene.jpeg' width="1600">
+              <img class="intro-image lazyload" src ='./img/irene.jpeg' width="1600px" aspect-ratio="1600/1200">
       </div>
     </div>
 
@@ -51,7 +51,7 @@
             <div class="small-font">{{project.templateContent | safe }}</div>
           </div>
           <div class="flex-item">
-            <img src ='./img/{{project.data.imageUrl}}'>
+            <img class="lazyload" src ='./img/{{project.data.imageUrl}}'>
           </div>
         </div>
       {% endfor %}
@@ -64,5 +64,7 @@
       <div><a href="https://github.com/izhou">Github</a></div>
       <div><a href="https://www.linkedin.com/in/irene-zhou-b7045886/">Linkedin</a></div>
     </div>
+
+    <script src="{{ "/assets/lazysizes.min.js" | url }}"></script>
   </body>
 </html>

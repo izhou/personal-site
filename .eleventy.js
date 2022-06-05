@@ -2,8 +2,11 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("./assets");
-  eleventyConfig.addPassthroughCopy("./img");
+  eleventyConfig.addPassthroughCopy({
+    "./assets": "assets",
+    "./img":"img",
+    "node_modules/lazysizes/lazysizes.min.js": "assets/lazysizes.min.js"
+  });
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
