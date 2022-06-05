@@ -2,8 +2,8 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
-
-  eleventyConfig.addPassthroughCopy("./assets")
+  eleventyConfig.addPassthroughCopy("./assets");
+  eleventyConfig.addPassthroughCopy("./img");
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
