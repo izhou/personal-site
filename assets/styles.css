@@ -10,6 +10,7 @@
   --h3-font-size: 2.4rem;
   --body-font-size: 1.4rem;
   --small-font-size: 1.1rem;
+  --micro-font-size: 0.8rem;
 }
 
 html {
@@ -135,6 +136,24 @@ img {
   max-height: 100%;
   object-fit: contain;
   object-position: top right;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container:hover .caption {
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  font-size: var(--micro-font-size);
+  background: white;
+  padding: 4px 0;
 }
 
 @media (max-width: 992px) {
