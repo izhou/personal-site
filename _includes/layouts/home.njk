@@ -12,9 +12,14 @@
 
   <body>
     <div class="content">
-    <div class="intro">
-      <h1><strong>Irene Zhou</strong>, software&nbsp;engineer.</h1>
-      <h2>Formerly at Slack.</h2>
+    <div class="intro flex-container">
+      <div class="intro--info flex-item flex-item--large">
+        <h1><strong>Irene Zhou</strong>, software&nbsp;engineer.</h1>
+        <h2>Formerly at Slack.</h2>
+      </div>
+      <div class="image-container flex-item">
+              <img class="intro-image" src ='./img/irene.jpeg'>
+      </div>
     </div>
 
     <div class="section">
@@ -36,21 +41,28 @@
 
     <div class="section">
       <h3 class="section-header">Projects</h2>
-    <div class="projects">
-      {% for project in collections.project %}
-      <div class="project--container flex-container ">
-        <div class="project--info flex-item">
-          <div class="project--title"><strong>{{project.data.title}}</strong></div>
-          <div class="project--dates small-font">{{project.data.dates}}</div>
-          <div class="project--content small-font">{{project.templateContent | safe }}</div>
+
+      <div class="projects">
+        {% for project in collections.project %}
+        <div class="project--container flex-container ">
+          <div class="project--info flex-item">
+            <div class="project--title"><strong>{{project.data.title}}</strong></div>
+            <div class="project--dates small-font">{{project.data.dates}}</div>
+            <div class="project--content small-font">{{project.templateContent | safe }}</div>
+          </div>
+          <div class="project--image-container flex-item">
+            <img class="project--image" src ='./img/{{project.data.imageUrl}}'>
+          </div>
         </div>
-        <div class="project--image-container flex-item">
-          <img class="project--image" src ='./img/{{project.data.imageUrl}}'>
-        </div>
-      </div>
       {% endfor %}
       </div>
     </div>
+
+    <div class="section">
+      <h3 class="section-header">Links</h3>
+      <div><a href="">CV</a></div>
+      <div><a href="https://github.com/izhou">Github</a></div>
+      <div><a href="https://www.linkedin.com/in/irene-zhou-b7045886/">Linkedin</a></div>
     </div>
   </body>
 </html>
