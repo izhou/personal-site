@@ -155,7 +155,7 @@ img {
 }
 
 /* Small desktop  */
-@media (max-width: 992px) {
+@media (max-width: 992px), (max-height: 400px) {
   :root {
     --padding: 3rem;
     --h1-font-size: 3.2rem;
@@ -167,7 +167,7 @@ img {
 }
 
 /* Tablets  */
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 300px) {
   :root {
     --padding: 2rem;
     --h1-font-size: 2.6rem;
