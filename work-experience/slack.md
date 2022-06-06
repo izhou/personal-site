@@ -2,7 +2,7 @@
 tags: workExperience
 company: Slack
 role: Senior Software Engineer
-dates: Jul 2014
+dates: Jul 2014 - Aug 2019
 date: 2014-07-01
 ---
 
